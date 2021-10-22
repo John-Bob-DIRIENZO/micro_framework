@@ -10,3 +10,13 @@ Tout ceci tourne avec Composer donc il faut lâcher un petit
 ```
 composer install
 ```
+Il traine un truc de markdown à but pédagogique
+
+Sinon en dehors de ça, j'ai laissé des exemples d'utilisation
+un petit peu partout pour que tout soit clair.
+
+Le dossier "/public" est là où se trouvent les feuilles CSS, 
+les fichiers JS, les images et surtout "index.php"
+
+Je pense continuer à ajouter des choses dessus au fur et à mesure
+si le temps me le permet
