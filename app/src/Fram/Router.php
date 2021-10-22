@@ -6,7 +6,7 @@ use App\Controller\ErrorController;
 
 class Router
 {
-    private $HTTPRequest;
+    private HTTPRequest $HTTPRequest;
 
     public function __construct()
     {
@@ -24,14 +24,14 @@ class Router
         isset($requestPath) ? $path = htmlspecialchars($requestPath) : $path = "/";
 
         foreach ($routes as $route) {
-            if ($path === $route->getAttribute('p')) {
+            if ($path === $route->getAttribute('path')) {
                 $controllerClass = 'App\\Controller\\' . $route->getAttribute('controller');
                 $action = $route->getAttribute('action');
                 $params = [];
                 if ($route->hasAttribute('params')) {
                     $keys = explode(',', $route->getAttribute('params'));
                     foreach ($keys as $key) {
-                        $params[$key] = $_GET[$key];
+                        $params[$key] = $this->HTTPRequest->getQuery($key);
                     }
                 }
                 return new $controllerClass($action, $params);

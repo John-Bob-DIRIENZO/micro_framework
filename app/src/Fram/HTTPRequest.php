@@ -4,22 +4,36 @@ namespace App\Fram;
 
 class HTTPRequest
 {
-    public function cookieData($key)
+    /**
+     * @param string $key
+     * @return mixed|null
+     */
+    public function cookieData(string $key)
     {
-        return isset($_COOKIE[$key]) ? $_COOKIE[$key] : null;
+        return $_COOKIE[$key] ?? null;
     }
 
-    public function cookieExists($key)
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public function cookieExists(string $key): bool
     {
         return isset($_COOKIE[$key]);
     }
 
-    public function method()
+    /**
+     * @return string
+     */
+    public function method(): string
     {
         return $_SERVER['REQUEST_METHOD'];
     }
 
-    public function requestURI()
+    /**
+     * @return string
+     */
+    public function requestURI(): string
     {
         return $_SERVER['REQUEST_URI'];
     }

@@ -9,6 +9,6 @@ class PostController extends BaseController
     public function executeIndex()
     {
         $parsedText = Markdown::defaultTransform('``Bievenue ici !``');
-        $this->render('coucou', ['text' => $parsedText],'Frontend/test');
+        $this->render('Hello World !', ['text' => $parsedText],'Frontend/home');
     }
 }

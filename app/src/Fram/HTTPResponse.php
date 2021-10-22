@@ -4,20 +4,14 @@ namespace App\Fram;
 
 class HTTPResponse
 {
-    public function addHeader($header)
+    public function addHeader($header): void
     {
         header($header);
     }
 
-    public function redirect($location, int $code = 0, bool $replace = true)
+    public function redirect($location, int $code = 0, bool $replace = true): void
     {
         header('Location: ' . $location, $replace, $code);
-        exit;
-    }
-
-    public function print($content)
-    {
-        echo $content;
         exit;
     }
 

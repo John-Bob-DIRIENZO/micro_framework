@@ -10,8 +10,8 @@ abstract class BaseController
     protected HTTPRequest $HTTPRequest;
     protected HTTPResponse $HTTPResponse;
     protected array $params;
-    protected $template = __DIR__ . '/../../views/template.php';
-    protected $viewsDir = __DIR__ . '/../../views/';
+    private string $template = __DIR__ . '/../../views/template.php';
+    private string $viewsDir = __DIR__ . '/../../views/';
 
     public function __construct(string $action, array $params = [])
     {
@@ -26,7 +26,7 @@ abstract class BaseController
         $this->$method();
     }
 
-    public function render(string $title, array $vars, string $view)
+    public function render(string $title, array $vars, string $view): void
     {
         $view = $this->viewsDir . $view . '.view.php';
         foreach ($vars as $key => $value) {
@@ -39,7 +39,7 @@ abstract class BaseController
         exit;
     }
 
-    public function renderJSON($content)
+    public function renderJSON($content): void
     {
         $this->HTTPResponse->addHeader('Content-Type: application/json');
         echo json_encode($content, JSON_PRETTY_PRINT);
