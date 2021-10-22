@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
+use Michelf\Markdown;
+
 class PostController extends BaseController
 {
     public function executeIndex()
     {
-        $this->render('coucou', ['text' => 'Francis Huster'],'Frontend/test');
+        $parsedText = Markdown::defaultTransform('``Bievenue ici !``');
+        $this->render('coucou', ['text' => $parsedText],'Frontend/test');
     }
 }
