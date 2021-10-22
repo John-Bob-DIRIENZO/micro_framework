@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Fram;
+namespace App\Fram\HTTPFoundation;
 
 class HTTPResponse
 {

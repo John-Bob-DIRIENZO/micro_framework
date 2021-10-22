@@ -3,6 +3,7 @@
 namespace App\Fram;
 
 use App\Controller\ErrorController;
+use App\Fram\HTTPFoundation\HTTPRequest;
 
 class Router
 {

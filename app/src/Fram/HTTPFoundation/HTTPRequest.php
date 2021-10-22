@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Fram;
+namespace App\Fram\HTTPFoundation;
 
 class HTTPRequest
 {
@@ -54,5 +54,11 @@ class HTTPRequest
     public function getRequest(string $key = null)
     {
         return $key ? $_POST[$key] : $_POST;
+    }
+
+
+    public function getFile(string $key = null)
+    {
+        return $key ? $_FILES[$key] : $_FILES;
     }
 }

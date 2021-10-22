@@ -8,6 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/michelf/php-markdown" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/app/public/images/uploads" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

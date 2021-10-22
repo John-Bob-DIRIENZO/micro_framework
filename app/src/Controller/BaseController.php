@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Fram\HTTPRequest;
-use App\Fram\HTTPResponse;
+use App\Fram\HTTPFoundation\HTTPRequest;
+use App\Fram\HTTPFoundation\HTTPResponse;
 
 abstract class BaseController
 {

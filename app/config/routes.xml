@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <routes>
-    <!-- Posts -->
     <route path="/" controller="PostController" action="index" params="id,mainId"/>
+    <!-- /api/ -->
+    <route path="upload-image" controller="ApiController" action="uploadImage"/>
 </routes>

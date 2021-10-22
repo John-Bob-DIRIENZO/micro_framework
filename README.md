@@ -8,6 +8,7 @@ MVC qui est mise en place
 ## Le fonctionnement
 Tout ceci tourne avec Composer donc il faut lâcher un petit
 ```
+cd app
 composer install
 ```
 Il traine un truc de markdown à but pédagogique
