@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Fram\BaseClasses\BaseController;
+
 class ErrorController extends BaseController
 {
     /**

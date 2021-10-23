@@ -2,12 +2,18 @@
 
 namespace App\Fram\Factories;
 
-class PDOFactory
+use App\Fram\Interfaces\ConnectionInterface;
+
+class PDOFactory implements ConnectionInterface
 {
-    public static function getMysqlConnexion(): \PDO
+    private static string $dsn = 'mysql:host=db';
+    private static string $username = 'root';
+    private static string $password = 'password';
+
+    private static function getMysqlConnection(): \PDO
     {
         try {
-            $db = new \PDO('mysql:host=db', 'root', 'password');
+            $db = new \PDO(self::$dsn, self::$username, self::$password);
             $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
             ob_start();
@@ -19,5 +25,9 @@ class PDOFactory
         }
 
         return $db;
+    }
+    public function getConnection(): \PDO
+    {
+        return self::getMysqlConnection();
     }
 }

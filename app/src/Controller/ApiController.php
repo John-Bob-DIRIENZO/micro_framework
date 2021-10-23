@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Fram\BaseClasses\BaseController;
 use App\Fram\Utils\UploadUtils;
 
 class ApiController extends BaseController

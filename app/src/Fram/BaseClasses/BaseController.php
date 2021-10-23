@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Fram\BaseClasses;
 
 use App\Fram\HTTPFoundation\HTTPRequest;
 use App\Fram\HTTPFoundation\HTTPResponse;
@@ -10,8 +10,8 @@ abstract class BaseController
     protected HTTPRequest $HTTPRequest;
     protected HTTPResponse $HTTPResponse;
     protected array $params;
-    private string $template = __DIR__ . '/../../views/template.php';
-    private string $viewsDir = __DIR__ . '/../../views/';
+    private string $template = __DIR__ . '/../../../views/template.php';
+    private string $viewsDir = __DIR__ . '/../../../views/';
 
     public function __construct(string $action, array $params = [])
     {

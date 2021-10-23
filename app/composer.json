@@ -18,6 +18,8 @@
     "ext-json": "*",
     "ext-exif": "*",
     "cocur/slugify": "^4.0",
-    "ext-fileinfo": "*"
+    "ext-fileinfo": "*",
+    "firebase/php-jwt": "^5.4",
+    "psr/container": "^2.0"
   }
 }
