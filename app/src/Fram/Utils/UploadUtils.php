@@ -2,6 +2,7 @@
 
 namespace App\Fram\Utils;
 
+use App\Entity\Image;
 use App\Fram\Entity\UploadedFile;
 use App\Fram\HTTPFoundation\HTTPRequest;
 
@@ -13,7 +14,7 @@ class UploadUtils
      * Returns the filename of the image on the FileSystem
      * use 'UPLOADED_PUBLIC_IMAGES' const to get the full filePath
      * @param string $name
-     * @return false|string
+     * @return false|Image
      */
     public static function uploadImage(string $name)
     {
@@ -37,6 +38,12 @@ class UploadUtils
         fclose($source);
         fclose($dest);
 
-        return $uploadedFile->getSafeName();
+        $image = new Image();
+        $image->setOriginalFileName($uploadedFile->getFileName())
+            ->setSlugName($uploadedFile->getSafeName())
+            ->setRealMimeType($uploadedFile->getRealMimeType())
+            ->setSize($uploadedFile->getSize());
+
+        return $image;
     }
 }
