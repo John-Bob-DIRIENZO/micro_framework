@@ -13,8 +13,6 @@ services:
     db:
         image: 'mariadb:10.6.4'
         restart: always
-        ports:
-            - '127.0.0.1:3306:3306'
         environment:
             MYSQL_ROOT_PASSWORD: password
             MYSQL_USER: user

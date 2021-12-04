@@ -9,7 +9,7 @@ use App\Manager\ImageManager;
 
 class ApiController extends BaseController
 {
-    public function executeUploadImage()
+    public function postUploadImage()
     {
         $image = UploadUtils::uploadImage('image');
 

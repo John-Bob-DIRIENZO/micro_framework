@@ -13,13 +13,13 @@ abstract class BaseController
     private string $template = __DIR__ . '/../../../views/template.php';
     private string $viewsDir = __DIR__ . '/../../../views/';
 
-    public function __construct(string $action, array $params = [])
+    public function __construct(string $action, array $params = [], string $method = 'get')
     {
         $this->HTTPRequest = new HTTPRequest();
         $this->HTTPResponse = new HTTPResponse();
         $this->params = $params;
 
-        $method = 'execute' . ucfirst($action);
+        $method = strtolower($method) . ucfirst($action);
         if (!is_callable([$this, $method])) {
             throw new \RuntimeException('L\'action "' . $method . '" n\'est pas définie sur ce module');
         }

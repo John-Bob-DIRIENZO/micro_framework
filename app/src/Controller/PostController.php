@@ -11,7 +11,7 @@ use Michelf\Markdown;
 
 class PostController extends BaseController
 {
-    public function executeIndex()
+    public function getIndex()
     {
         $postMmanager = DIC::autowire('PostManager');
         /** @var $postMmanager PostManager */

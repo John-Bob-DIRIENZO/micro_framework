@@ -38,7 +38,7 @@ class DIC implements ContainerInterface
      */
     public static function autowire(string $instance): object
     {
-        return self::get($instance);
+        return (new DIC)->get($instance);
     }
 
     /**

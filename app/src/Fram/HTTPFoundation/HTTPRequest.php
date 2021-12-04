@@ -44,7 +44,8 @@ class HTTPRequest
      */
     public function getQuery(string $key = null)
     {
-        return $key ? $_GET[$key] : $_GET;
+        $query = $_GET[$key] ?? null;
+        return $key ? $query : $_GET;
     }
 
     /**
